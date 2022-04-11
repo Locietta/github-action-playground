@@ -5,11 +5,11 @@ changelog:
   categories:
     - title: Kernel Features and Patches
       labels:
-        kernel-feature
-        kernel-patch
+        - kernel-feature
+        - kernel-patch
     - title: Performance
       labels:
-        performance
+        - performance
     - title: Auto Release
       labels:
         - auto-release
