@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: locietta/loia-dev-base:latest
+    container: "ubuntu:devel"
     
     steps:
       - name: Trust My Directory
