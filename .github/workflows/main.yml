@@ -10,11 +10,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    container: locietta/loia-dev-base:latest
+    container: 'ubuntu-20.04'
     
     steps:
       - name: Trust My Directory
-        run: export GIT_CEILING_DIRECTORIES=/home
+        run: git config --global --add safe.directory /__w/github-action-playground/github-action-playground
       - uses: actions/checkout@v3
 
       - name: GH Release
