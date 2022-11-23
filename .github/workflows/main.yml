@@ -17,7 +17,7 @@ jobs:
 
       - name: run scripts
         run: |
-          echo "TEST=false" | tee -a $GITHUB_ENV
+          echo "TEST=0" | tee -a $GITHUB_ENV
 
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
