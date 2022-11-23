@@ -15,9 +15,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: run scripts
+        run: |
+          echo "TEST=false" | tee -a $GITHUB_ENV
+
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
-        if: false
+        if: ${{ env.TEST }}
         with:
           body: test?
           tag_name: v0.0.1
