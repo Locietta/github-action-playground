@@ -30,7 +30,7 @@ jobs:
           echo $AAA
           echo HA?
           echo =================
-          curl -s https://xanmod.org | grep -A1 MAIN
+          curl -s https://www.kernel.org | grep -A1 longterm
 
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
