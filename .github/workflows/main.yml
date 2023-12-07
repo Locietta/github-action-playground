@@ -24,6 +24,10 @@ jobs:
           echo "TEST=" | tee -a $GITHUB_ENV
           export AAA=$(curl -s https://xanmod.org/ | grep -A1 MAIN | grep -E '[0-9]+\.[0-9]+' -o | head -n1)
           echo $AAA
+          echo Hi!
+          echo "AAA=$(curl -s https://xanmod.org/ | grep -A1 MAIN | grep -E '[0-9]+\.[0-9]+' -o | head -n1)" | tee -a $GITHUB_ENV
+          echo $AAA
+          echo HA?
 
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
