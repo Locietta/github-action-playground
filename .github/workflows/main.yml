@@ -17,6 +17,7 @@ jobs:
 
       - name: run scripts
         run: |
+          sudo apt-get install curl
           echo "TEST=" | tee -a $GITHUB_ENV
           export AAA=$(curl -s https://xanmod.org/ | grep -A1 MAIN | grep -E '[0-9]+\.[0-9]+' -o | head -n1)
           echo $AAA
