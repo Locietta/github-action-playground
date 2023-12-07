@@ -28,6 +28,9 @@ jobs:
           echo "AAA=$(curl -s https://xanmod.org/ | grep -A1 MAIN | grep -E '[0-9]+\.[0-9]+' -o | head -n1)" | tee -a $GITHUB_ENV
           echo $AAA
           echo HA?
+          curl -s https://xanmod.org/
+          echo =================
+          curl -s https://xanmod.org/ | grep MAIN
 
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
