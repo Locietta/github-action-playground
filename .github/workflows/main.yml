@@ -29,9 +29,9 @@ jobs:
           echo "AAA=$(curl -s https://xanmod.org/ | grep -A1 MAIN | grep -E '[0-9]+\.[0-9]+' -o | head -n1)" | tee -a $GITHUB_ENV
           echo $AAA
           echo HA?
-          curl -L -s https://www.xanmod.org -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0"
+          curl -L -s https://www.xanmod.org
           echo \n=================\n
-          curl -L -s https://www.xanmod.org -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" | grep -A1 MAIN
+          curl -L -s https://www.xanmod.org | grep -A1 MAIN
 
       - name: GH Release
         uses: softprops/action-gh-release@v0.1.14
