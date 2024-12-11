@@ -13,7 +13,7 @@ jobs:
     container: "ubuntu:devel"
     
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@main
 
       - name: install anything
         run: |
@@ -22,22 +22,15 @@ jobs:
       - name: run scripts
         shell: bash
         run: |
-          echo "TEST=" | tee -a $GITHUB_ENV
-          export AAA=$(curl -s https://xanmod.org/ | grep -A1 MAIN | grep -E '[0-9]+\.[0-9]+' -o | head -n1)
-          echo $AAA
-          echo Hi!
-          echo "AAA=$(curl -s https://xanmod.org/ | grep -A1 MAIN | grep -E '[0-9]+\.[0-9]+' -o | head -n1)" | tee -a $GITHUB_ENV
-          echo $AAA
-          echo HA?
-          echo \n=================\n
-          curl -s https://www.xanmod.org -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0" | grep -A1 MAIN
-
-      - name: GH Release
-        uses: softprops/action-gh-release@v0.1.14
-        if: ${{ env.TEST }}
-        with:
-          body: test?
-          tag_name: v0.0.1
-          files: README.md
-          generate_release_notes: true
-          token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
+          git clone https://github.com/Locietta/github-action-playground.git
+          # test if now we can run git without safe directory thing...
+          
+      # - name: GH Release
+      #   uses: softprops/action-gh-release@v0.1.14
+      #   if: ${{ env.TEST }}
+      #   with:
+      #     body: test?
+      #     tag_name: v0.0.1
+      #     files: README.md
+      #     generate_release_notes: true
+      #     token: ${{ secrets.CUSTOM_GITHUB_TOKEN }}
