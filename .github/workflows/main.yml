@@ -22,8 +22,9 @@ jobs:
       - name: run scripts
         shell: bash
         run: |
+          ls
           git clone https://github.com/Locietta/github-action-playground.git
-          git log -1 --pretty="%ai" "README.md"
+          cd github-action-playground && git log -1 --pretty="%ai" "README.md"
           # test if now we can run git without safe directory thing...
           
       # - name: GH Release
